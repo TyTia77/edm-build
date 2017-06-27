@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const watch = require('gulp-watch');
 const autoprefixer = require('gulp-autoprefixer');
-const cssInline = require('gulp-css-inliner');
 const inlineCss = require('gulp-inline-css');
 
 gulp.task('inliner', function() {
