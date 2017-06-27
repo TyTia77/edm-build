@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
 const watch = require('gulp-watch');
-const autoprefixer = require('gulp-autoprefixer');
 const inlineCss = require('gulp-inline-css');
 
 gulp.task('inliner', function() {
@@ -20,8 +20,8 @@ gulp.task('inliner', function() {
 gulp.task('buildcss', () => {
     return gulp
         .src(['style/main.scss'])
+        .pipe(sassGlob())
         .pipe(sass())
-        .pipe(autoprefixer({browsers: ['last 2 versions'], cascade: false}))
         .pipe(gulp.dest('./dist'));
 });
 
